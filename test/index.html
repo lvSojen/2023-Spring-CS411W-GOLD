@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Booked</title>
+<style>
+	body {
+		background-color: rgb(253,204,204);
+		font-family: Arial;
+	}
+	.form {
+		background-color: rgb(145,136,202);
+		width: 50%;
+		padding-top: 10px;
+		padding-right: 20px;
+		padding-bottom: 20px;
+		padding-left: 20px;
+	}
+	.form-group {
+		display: flex;
+		padding-bottom: 10px;
+	}
+	label {
+		color: white;
+		padding-right: 10px;
+	}
+	input {
+		width: 100%;
+	}
+	.search {
+		text-align: center;
+		padding-top: 10px;
+	}
+</style>
+</head>
+<body>
+<h1>Booked</h1>
+<h3 style="color: rgb(139,118,118);">Finding books from local, independent bookstores made easy!</h3>
+<div class="form">
+	<h3 style="color: white; text-align: center; padding-bottom: 10px;">Booked Search Form</h3>
+	<form>
+		<div class="form-group">
+			<label for="title">Book Title:</label>
+			<input type="text" id="title" name="title">
+		</div>
+		<div class="form-group">
+			<label for="language">Book Language:</label>
+			<input list="language">
+			<datalist id="language">
+				<option value="English">
+				<option value="Chinese">
+				<option value="Spanish">
+				<option value="German">
+				<option value="Japanese">
+			</datalist>
+		</div>
+		<div class="form-group">
+			<label for="author">Author:</label>
+			<input type="text" id="author" name="author">
+		</div>
+		<div class="form-group">
+			<label for="isbn">ISBN:</label>
+			<input type="text" id="isbn" name="isbn">
+		</div>
+		<div class="form-group">
+			<label for="binding">Binding:</label>
+			<input list="binding">
+			<datalist id="binding">
+				<option value="Case">
+				<option value="PUR">
+			</datalist>
+			<label for="condition" style="padding-left: 10px;">Condition:</label>
+			<input list="condition">
+			<datalist id="condition">
+				<option value="New">
+				<option value="Used">
+			</datalist>
+
+		</div>
+		<div class="form-group">
+			<label for="edition">Edition:</label>
+			<input list="edition">
+			<datalist id="edition">
+				<option value="First">
+				<option value="Large Print">
+			</datalist>
+			<label for="format" style="padding-left: 10px;">Format:</label>
+			<input list="format">
+			<datalist id="format">
+				<option value="Hardcover">
+				<option value="Paperback">
+			</datalist>
+		</div>
+		<div class="form-group">
+			<label for="min">Price Range:</label>
+			<input type="text" id="min" name="min">
+			<label for="max" style="padding-left: 10px;">to</label>
+			<input type="text" id="max" name="max">
+		</div>
+		<div class="search">
+			<input type="submit" value="Search" style="background-color: rgb(97,255,0); height: 50px; width: 150px">
+		</div>
+	</form>
+</div>
+</body>
+</html>
