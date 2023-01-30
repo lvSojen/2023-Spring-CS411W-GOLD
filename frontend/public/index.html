@@ -7,37 +7,110 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Web site created using create-react-app" 
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <title>Booked Prototype</title>
   </head>
+
+  <style>
+    body {
+      background-color: rgb(253,204,204);
+      font-family: Arial;
+      text-align: center;
+    }
+    .form {
+      background-color: rgb(145,136,202);
+      width: 50%;
+      margin: 0 auto;
+      padding: 10px 20px 20px 20px;
+    }
+    .form-group {
+      display: flex;
+      text-align: left;
+      padding-bottom: 15px;
+    }
+    label {
+      color: white;
+      padding-right: 15px;
+    }
+    input {
+      width: 100%;
+    }
+    .search {
+      background-color: rgb(97,255,0);
+      text-align: center;
+      width: 150px;
+      height: 50px;
+    }
+  </style>
+
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <h1>Booked</h1>
+    <h3 style="color: rgb(139,118,118);">Finding books from local, independent bookstores made easy!</h3>
+    <div class="form">
+      <h3 style="color: white;">Booked Search Form</h3>
+      <form>
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title">
+        </div>
+        <div class="form-group">
+          <label for="language">Language:</label>
+          <input list="language">
+          <datalist id="language">
+            <option value="English">
+            <option value="Chinese">
+            <option value="Spanish">
+            <option value="German">
+            <option value="Japanese">
+          </datalist>
+        </div>
+        <div class="form-group">
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author">
+        </div>
+        <div class="form-group">
+          <label for="isbn">ISBN:</label>
+          <input type="text" id="isbn" name="isbn">
+        </div>
+        <div class="form-group">
+          <label for="binding">Binding:</label>
+          <input list="binding">
+          <datalist id="binding">
+            <option value="Case">
+            <option value="PUR">
+          </datalist>
+          <label for="condition"  style="padding-left: 10px;"">Condition:</label>
+          <input list="condition">
+          <datalist id="condition">
+            <option value="New">
+            <option value="Used">
+          </datalist>
+        </div>
+        <div class="form-group">
+          <label for="edition">Edition:</label>
+          <input list="edition">
+          <datalist id="edition">
+            <option value="First">
+            <option value="Large Print">
+          </datalist>
+          <label for="format" style="padding-left: 10px;">Format:</label>
+          <input list="format">
+          <datalist id="format">
+            <option value="Hardcover">
+            <option value="Paperback">
+          </datalist>
+        </div>
+        <div class="form-group">
+          <label for="min">Price Range:</label>
+          <input type="text" id="min" name="min">
+          <label for="max" style="padding-left: 10px;">to</label>
+          <input type="text" id="max" name="max">
+        </div>
+          <input class="search" type="submit" value="Search">
+      </form>
+    </div>
   </body>
 </html>
