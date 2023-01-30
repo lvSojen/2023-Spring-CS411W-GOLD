@@ -15,6 +15,23 @@
   </head>
 
   <style>
+    .nav {
+      width: 50%;
+      margin: 0 auto;
+    }
+    ul {
+      background-color: rgb(204,164,164);
+      border-style: solid;
+      list-style-type: none;
+    }
+    li {
+      display: inline;
+    }
+    a {
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+    }
     body {
       background-color: rgb(253,204,204);
       font-family: Arial;
@@ -29,7 +46,16 @@
   </style>
 
   <body>
-    <h1>Booked</h1>
+    <div class="nav">
+        <ul>
+          <li><a href="index.html">Home |</a></li>
+          <li><a href="">Sign In |</a></li>
+          <li><a href="">About |</a></li>
+          <li><a href="">Preferences |</a></li>
+          <li><a href="">Help</a></li>
+        </ul>
+      </div>
+    <h1 style="color: black;">Booked</h1>
     <h3 style="color: rgb(139,118,118);">Finding books from local, independent bookstores made easy!</h3>
     <button onclick="window.location.href='index.html';">Back to Home</button>
   </body>
