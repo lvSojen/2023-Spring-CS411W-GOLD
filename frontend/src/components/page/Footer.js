@@ -6,6 +6,9 @@ function Footer() {
     <footer>
       <Container className="py-3">
         <Row>
+          <Col className="text-center">BookedSearch.com&reg;</Col>
+        </Row>
+        <Row>
           <Col className="text-center">Spring 2023 | CS411W | Team Gold</Col>
         </Row>
         <Row>
