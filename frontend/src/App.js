@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Container } from "react-bootstrap"
 import HomeScreen from "./screens/HomeScreen"
 import ContactScreen from "./screens/ContactScreen"
-import Footer from "./components/Footer"
-
+import Footer from "./components/page/Footer"
+import Header from "./components/page/Header"
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <main className="py-3">
         <Container>
           <Routes>
