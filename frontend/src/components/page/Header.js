@@ -18,8 +18,17 @@ function Header() {
               <Nav.Link href="/">
                 <i class="fa-solid fa-house"></i> Home
               </Nav.Link>
+              <Nav.Link href="/signin">
+                <i class="fa-solid fa-house"></i> Sign In
+              </Nav.Link>
+              <Nav.Link href="/signup">
+                <i class="fa-solid fa-house"></i> Sign Up
+              </Nav.Link>
               <Nav.Link href="/contact">
                 <i className="fa-solid fa-envelope"></i> Contact
+              </Nav.Link>
+              <Nav.Link href="/about">
+                <i className="fa-solid fa-house"></i> About
               </Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
