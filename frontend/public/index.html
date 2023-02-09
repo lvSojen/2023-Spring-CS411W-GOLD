@@ -15,7 +15,7 @@
   </head>
 
   <style>
-    .nav {
+    nav {
       width: 50%;
       margin: 0 auto;
     }
@@ -42,16 +42,18 @@
       border-style: solid;
       width: 50%;
       margin: 0 auto;
-      padding: 10px 20px 20px 20px;
     }
     .form-group {
       display: flex;
       text-align: left;
+      padding-right: 15px;
       padding-bottom: 15px;
     }
     label {
       color: white;
       padding-right: 15px;
+      padding-left: 15px;
+      
     }
     input {
       width: 100%;
@@ -64,16 +66,17 @@
     }
   </style>
 
+<nav>
+  <ul>
+    <li><a href="index.html">Home |</a></li>
+    <li><a href="signin.html">Sign In |</a></li>
+    <li><a href="about.html">About |</a></li>
+    <li><a href="preferences.html">Preferences |</a></li>
+    <li><a href="help.html">Help</a></li>
+  </ul>
+</nav>
+
   <body>
-    <div class="nav">
-      <ul>
-        <li><a href="index.html">Home |</a></li>
-        <li><a href="signin.html">Sign In |</a></li>
-        <li><a href="about.html">About |</a></li>
-        <li><a href="preferences.html">Preferences |</a></li>
-        <li><a href="help.html">Help</a></li>
-      </ul>
-    </div>
     <h1 style="color: black;">Booked</h1>
     <h3 style="color: rgb(139,118,118);">Finding books from local, independent bookstores made easy!</h3>
     <div class="form">
@@ -136,7 +139,9 @@
           <label for="max" style="padding-left: 10px;">to</label>
           <input type="text" id="max" name="max">
         </div>
+        <div style="padding-bottom: 15px;">
           <input class="search" type="button" onclick="window.location.href='results.html';" value="Search">
+        </div>
       </form>
     </div>
   </body>
