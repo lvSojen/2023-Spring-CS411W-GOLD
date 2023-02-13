@@ -8,7 +8,7 @@ function HomeScreen() {
   return (
     <Container className="py-3">
       <h1>
-        <Badge bg="secondary">411W Gold HomeScreen</Badge>
+        <Badge bg="secondary" style={{textDecoration: 'none'}}>411W Gold HomeScreen</Badge>
       </h1>
       <SearchForm />
       <SearchForm />

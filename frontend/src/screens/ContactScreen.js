@@ -1,15 +1,12 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import { Button } from "react-bootstrap"
+import ContactForm from "../components/common/ContactForm"
 import { Container } from "react-bootstrap"
 
 function ContactScreen() {
   return (
     <Container className="py-3">
-      <div>ContactScreen</div>
-      <Link to="/">
-        <Button variant="info">click me</Button>
-      </Link>
+      <h1>Contact Us</h1>
+      <ContactForm/>
     </Container>
   )
 }
