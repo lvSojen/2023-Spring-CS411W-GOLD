@@ -6,6 +6,8 @@ import ContactScreen from "./screens/ContactScreen"
 import Footer from "./components/page/Footer"
 import Header from "./components/page/Header"
 import AboutScreen from "./screens/AboutScreen"
+import SignInScreen from "./screens/SignInScreen"
+import SignUpScreen from "./screens/SignUpScreen"
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,8 @@ function App() {
             <Route path="/" element={<HomeScreen />} exact></Route>
             <Route path="/contact" element={<ContactScreen />} exact></Route>
             <Route path="/about" element={<AboutScreen />} exact></Route>
+            <Route path="/signin" element={<SignInScreen />} exact></Route>
+            <Route path="/signup" element={<SignUpScreen />} exact></Route>
           </Routes>
         </Container>
       </main>
