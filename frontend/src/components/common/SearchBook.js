@@ -3,7 +3,31 @@ import { Container } from "react-bootstrap"
 import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
 import NavDropdown from "react-bootstrap/NavDropdown"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Select from 'react-select';
 
+const language = [
+    { label: "English", value: 1 },
+    { label: "Spanish", value: 2 },
+    { label: "German", value: 3 }
+  ];
+const condition = [
+    { label: "New", value: 1 },
+    { label: "Used", value: 2 },
+  ];
+  const edition = [
+    { label: "Eddition 1", value: 1 },
+    { label: "Eddition 2", value: 2 },
+    { label: "Edition 3", value: 3 }
+  ];
+  const binding = [
+    { label: "Paperback", value: 1 },
+    { label: "Hardcover", value: 2 },
+  ];
+  const format = [
+    { label: "Physical", value: 1 },
+    { label: "Digital", value: 2 },
+  ];
 
 const SearchBook = () => {
     return (
@@ -34,25 +58,30 @@ const SearchBook = () => {
                     <Form.Control type="isbn" placeholder="ISBN" />
                 </Form.Group>
 
-                <NavDropdown title="Condition" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">New</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Used</NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown title="Edition" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Edition 1</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Edition 2</NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown title="Binding" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Paperback</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Hardcover</NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown title="Format" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Physical</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Digital</NavDropdown.Item>
-                </NavDropdown>
+
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-2">
+                            <Form.Label>Condition</Form.Label>
+                            <Select options={ condition } />
+                        </div>
+                        <div className="col-md-4">
+                            <Form.Label>Edition</Form.Label>
+                            <Select options={ edition } />
+                        </div>
+                        <div className="col-md-2">
+                            <Form.Label>Binding</Form.Label>
+                            <Select options={ binding } />
+                        </div>
+                        <div className="col-md-4">
+                            <Form.Label>Format</Form.Label>
+                            <Select options={ format } />
+                        </div>
+                    </div>
+                </div>
 
                 <Form.Group className="mb-3" controlId="Price Minimum">
-                    <Form.Label>Price Mimimum</Form.Label>
+                    <Form.Label><br></br>Price Mimimum</Form.Label>
                     <Form.Control type="priceMin" placeholder="Min" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="Price Maximum">

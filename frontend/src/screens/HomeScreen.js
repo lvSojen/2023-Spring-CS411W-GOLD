@@ -11,12 +11,9 @@ function HomeScreen() {
   return (
     <Container className="py-3">
       <h1>
-        <Badge bg="secondary">411W Gold HomeScreen</Badge>
+        <Badge bg="light">Booked Search</Badge>
       </h1>
       <SearchBook />
-      <Link to="/contact">
-        <Button variant="info">Contact us!</Button>
-      </Link>
     </Container>
   )
 }
