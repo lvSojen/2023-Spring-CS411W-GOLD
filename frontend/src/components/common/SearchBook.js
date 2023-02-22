@@ -38,11 +38,6 @@ const SearchBook = () => {
                     <Form.Control type="bookTitle" placeholder="Title" />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="languageWritten">
-                    <Form.Label>Language Written In</Form.Label>
-                    <Form.Control type="language" placeholder="Language" />
-                </Form.Group>
-
                 <NavDropdown title="Language" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">English</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">Spanish</NavDropdown.Item>
