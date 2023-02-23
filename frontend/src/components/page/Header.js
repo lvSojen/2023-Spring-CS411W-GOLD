@@ -2,7 +2,7 @@ import React from "react"
 import { Container } from "react-bootstrap"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
-import NavDropdown from "react-bootstrap/NavDropdown"
+//import NavDropdown from "react-bootstrap/NavDropdown"
 
 function Header() {
   return (
@@ -24,13 +24,10 @@ function Header() {
               <Nav.Link href="/signup">
                 <i class="fa-solid fa-user-plus"></i> Sign Up
               </Nav.Link>
-              <Nav.Link href="/contact">
-                <i className="fa-solid fa-envelope"></i> Contact
-              </Nav.Link>
               <Nav.Link href="/about">
                 <i class="fa-solid fa-address-card"></i> About
               </Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Another action
@@ -42,7 +39,7 @@ function Header() {
                 <NavDropdown.Item href="#action/3.4">
                   Separated link
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
