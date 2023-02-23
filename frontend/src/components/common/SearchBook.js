@@ -16,8 +16,8 @@ const condition = [
     { label: "Used", value: 2 },
   ];
   const edition = [
-    { label: "Eddition 1", value: 1 },
-    { label: "Eddition 2", value: 2 },
+    { label: "Edition 1", value: 1 },
+    { label: "Edition 2", value: 2 },
     { label: "Edition 3", value: 3 }
   ];
   const binding = [
@@ -38,12 +38,15 @@ const SearchBook = () => {
                     <Form.Control type="bookTitle" placeholder="Title" />
                 </Form.Group>
 
-                <Form.Select aria-label="Default select example">
-                    <option disabled selected>language:</option>
-                    {language.map(lang => (
-                        <option key={lang.value} value={lang.value}>{lang.label}</option>
-                    ))}
-                </Form.Select>
+                <Form.Group className="mb-3" controlId="Language">
+                    <Form.Label>Language</Form.Label>
+                    <Form.Select aria-label="Default select example">
+                        <option disabled selected>Language</option>
+                        {language.map(lang => (
+                            <option key={lang.value} value={lang.value}>{lang.label}</option>
+                        ))}
+                    </Form.Select>
+                </Form.Group>
 
                 <Form.Group className="mb-3" controlId="Author">
                     <Form.Label>Author</Form.Label>
