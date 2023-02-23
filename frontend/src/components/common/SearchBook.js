@@ -2,14 +2,14 @@ import React from 'react'
 import { Container } from "react-bootstrap"
 import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
-import NavDropdown from "react-bootstrap/NavDropdown"
+// import NavDropdown from "react-bootstrap/NavDropdown"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Select from 'react-select';
 
 const language = [
-    { label: "English", value: 1 },
-    { label: "Spanish", value: 2 },
-    { label: "German", value: 3 }
+    { label: "English", value: "english" },
+    { label: "Spanish", value: "spanish" },
+    { label: "German", value: "german" }
   ];
 const condition = [
     { label: "New", value: 1 },
@@ -40,9 +40,9 @@ const SearchBook = () => {
 
                 <Form.Select aria-label="Default select example">
                     <option disabled selected>language:</option>
-                    <option value="english">English</option>
-                    <option value="spanish">Spanish</option>
-                    <option value="german">German</option>
+                    {language.map(lang => (
+                        <option key={lang.value} value={lang.value}>{lang.label}</option>
+                    ))}
                 </Form.Select>
 
                 <Form.Group className="mb-3" controlId="Author">
