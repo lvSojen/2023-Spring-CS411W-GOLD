@@ -66,6 +66,7 @@ function TeamPhoto() {
               src={image.path}
               width={200}
               className="rounded m-2 team-photo"
+              role="button"
             />
           </OverlayTrigger>
           <h5 className="my-2">{image.name}</h5>
