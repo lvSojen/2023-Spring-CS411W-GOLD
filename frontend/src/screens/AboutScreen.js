@@ -2,6 +2,7 @@ import React from "react"
 import { Container } from "react-bootstrap"
 import { MDBTypography, MDBIcon } from "mdb-react-ui-kit"
 import { Link } from "react-router-dom"
+import TeamPhoto from "../components/common/TeamPhoto"
 function AboutScreen() {
   return (
     <Container className="py-3">
@@ -25,6 +26,7 @@ function AboutScreen() {
           <span>Meet the team</span> <i className="fa-solid fa-greater-than fa-xs"></i>
         </h4>
       </Link>
+      <TeamPhoto />
     </Container>
   )
 }
