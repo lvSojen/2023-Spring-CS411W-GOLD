@@ -7,6 +7,7 @@ import Header from "./components/page/Header"
 import AboutScreen from "./screens/AboutScreen"
 import SignInScreen from "./screens/SignInScreen"
 import SignUpScreen from "./screens/SignUpScreen"
+import SearchResultScreen from "./screens/SearchResultScreen"
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,11 @@ function App() {
             <Route path="/about" element={<AboutScreen />} exact></Route>
             <Route path="/signin" element={<SignInScreen />} exact></Route>
             <Route path="/signup" element={<SignUpScreen />} exact></Route>
+            <Route
+              path="/result"
+              element={<SearchResultScreen />}
+              exact
+            ></Route>
           </Routes>
         </Container>
       </main>
