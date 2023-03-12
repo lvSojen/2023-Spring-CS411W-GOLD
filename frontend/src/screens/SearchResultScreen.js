@@ -5,7 +5,7 @@ import SearchResult from "../components/common/SearchResult"
 function SearchResultScreen() {
   return (
     <Container>
-      <div>SearchResultScreen</div>
+      <div></div>
       <SearchData />
       <SearchResult />
     </Container>
