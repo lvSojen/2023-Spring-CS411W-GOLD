@@ -47,7 +47,7 @@ function SignUpform() {
       if (!isValidZip && formData.zipcode) {
         setFormErrors({
           ...formErrors,
-          zipcode: "Zip code must be a 5-digit number",
+          zipcode: "Zip code must be a 5-digit number.",
         })
         return
       }
@@ -89,9 +89,6 @@ function SignUpform() {
             placeholder="Enter Password"
             name="password"
           />
-          {formErrors.password && (
-            <Form.Text className="text-danger">{formErrors.password}</Form.Text>
-          )}
           <Button variant="link" style={{ padding: 5 }}>
             <Form.Check
               type="checkbox"
@@ -100,6 +97,9 @@ function SignUpform() {
               style={{ color: "black", fontSize: "14px" }}
             />
           </Button>
+          {formErrors.password && (
+            <Form.Text className="text-danger">{formErrors.password}</Form.Text>
+          )}
         </Form.Group>
 
         <Form.Group controlId="formConfirmPassword">
