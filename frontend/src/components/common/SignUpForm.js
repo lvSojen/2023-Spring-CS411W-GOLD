@@ -125,7 +125,7 @@ function SignUpform() {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formZipCode">
           <Form.Label className="text-center">Zip Code (optional)</Form.Label>
-          <Form.Control type="text" placeholder="Enter Name" name="zipcode" />
+          <Form.Control type="text" placeholder="Enter Zip Code" name="zipcode" />
           {formErrors.zipcode && (
             <Form.Text className="text-danger">{formErrors.zipcode}</Form.Text>
           )}
