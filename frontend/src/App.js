@@ -8,6 +8,7 @@ import AboutScreen from "./screens/AboutScreen"
 import SignInScreen from "./screens/SignInScreen"
 import SignUpScreen from "./screens/SignUpScreen"
 import SearchResultScreen from "./screens/SearchResultScreen"
+import RecommendationsScreen from "./screens/RecommendationsScreen"
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
         <Container>
           <Routes>
             <Route path="/" element={<HomeScreen />} exact></Route>
+            <Route path="/recommendations" element={<RecommendationsScreen />} exact></Route>
             <Route path="/about" element={<AboutScreen />} exact></Route>
             <Route path="/signin" element={<SignInScreen />} exact></Route>
             <Route path="/signup" element={<SignUpScreen />} exact></Route>

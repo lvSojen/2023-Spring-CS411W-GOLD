@@ -18,6 +18,9 @@ function Header() {
               <Nav.Link href="/">
                 <i class="fa-solid fa-house"></i> Home
               </Nav.Link>
+              <Nav.Link href="/recommendations">
+                <i class="fa fa-thumbs-up"></i> Recommendations
+              </Nav.Link>
               <Nav.Link href="/signin">
                 <i class="fa-solid fa-right-to-bracket"></i> Sign In
               </Nav.Link>
