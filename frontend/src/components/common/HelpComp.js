@@ -2,7 +2,7 @@ import Table from 'react-bootstrap/Table';
 import React from "react"
 function HelpComp() {
   return (
-    <Table striped bordered hover variant="dark">
+    <Table striped bordered variant="light">
       <thead>
         <tr>
           <th></th>
@@ -24,11 +24,11 @@ function HelpComp() {
           <td></td>
           <td>
              <p>
-                Enter information about the book on the BookedSearch home page.
+                Enter information about the book on the Home page.
             </p>
             </td>
           <td><p>
-                Once you entered the information, you will get a list of books that match your search.
+                Once you enter the information, you will get a list of books that match your search.
             </p>
             <p>
                 Choose the title that is closest to your search.
@@ -36,7 +36,7 @@ function HelpComp() {
             </td>
           <td>
             <p>
-                You will see used and new books matching search criteria, with prices and descriptions of each book. 
+                You will see new and used books matching your search criteria with their prices and descriptions. 
                 Any available formats and bindings of the book will also be listed.
             </p>
             <p>
@@ -50,10 +50,10 @@ function HelpComp() {
           <td>
             <ul>
                 <li>
-                    For best results enter the author, title and ISBN.
+                    For the best results, enter the author, title and ISBN.
                 </li>
                 <li>
-                    No initials, subtitles or middles names are included for search crtieria.
+                    No initials, subtitles or middles names are included in the search crtieria.
                 </li>
                 <li>
                     Make sure to fill out as much search criteria as possible.
@@ -63,30 +63,30 @@ function HelpComp() {
           <td>
             <ul>
                 <li>
-                    The same title can be spelled in two different ways.
+                    The same title can be spelled two different ways.
                 </li>
                 <li>
-                    There are also conditions, editions, bindings and format to help narrow down the search.
+                    There are also conditions, editions, bindings and formats to help narrow down the search.
                 </li>
             </ul>
           </td>
           <td>
             <ul>
                 <li>
-                    Note down which bookseller you're buying the book from.
+                    Note down which bookseller you are buying the book from.
                 </li>
                 <li>
-                    If book new and used books are found, they will be listed together on the search page.
+                    If new and used books are found, they will be listed together on the search page.
                 </li>
             </ul>
           </td>
         </tr>
-        <tr>
+        {/* <tr>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-        </tr>
+        </tr> */}
       </tbody>
     </Table>
   );

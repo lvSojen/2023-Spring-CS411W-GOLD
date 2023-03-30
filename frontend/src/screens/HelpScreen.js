@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap"
 function HelpScreen() {
   return (
     <Container className="py-3">
-      <h1>BookedSearch.com help</h1> 
+      <h1>Need help with BookedSearch.com?</h1> 
       <HelpComp/>
     </Container>
   )
