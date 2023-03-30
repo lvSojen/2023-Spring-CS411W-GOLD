@@ -9,6 +9,7 @@ import SignInScreen from "./screens/SignInScreen"
 import SignUpScreen from "./screens/SignUpScreen"
 import SearchResultScreen from "./screens/SearchResultScreen"
 import RecommendationsScreen from "./screens/RecommendationsScreen"
+import HelpScreen from "./screens/HelpScreen"
 function App() {
   return (
     <BrowserRouter>
@@ -26,6 +27,7 @@ function App() {
               element={<SearchResultScreen />}
               exact
             ></Route>
+            <Route path="/help" element={<HelpScreen />} exact></Route>
           </Routes>
         </Container>
       </main>

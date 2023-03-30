@@ -30,19 +30,9 @@ function Header() {
               <Nav.Link href="/about">
                 <i class="fa-solid fa-address-card"></i> About
               </Nav.Link>
-              {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown> */}
+              <Nav.Link href='/help'>
+              <i class="fa-sharp fa-solid fa-circle-info"></i> Help
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
