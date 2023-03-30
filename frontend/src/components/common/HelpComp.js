@@ -40,7 +40,8 @@ function HelpComp() {
                 Any available formats and bindings of the book will also be listed.
             </p>
             <p>
-                Click on the book cover to find out how to order the book.
+                Click on the book cover to find out how to order the book. 
+                
             </p>
           </td>
         </tr>
