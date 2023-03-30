@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Container } from "react-bootstrap"
+import HomeScreen from "./screens/HomeScreen"
+import Footer from "./components/page/Footer"
+import Header from "./components/page/Header"
+import AboutScreen from "./screens/AboutScreen"
+import SignInScreen from "./screens/SignInScreen"
+import SignUpScreen from "./screens/SignUpScreen"
+import SearchResultScreen from "./screens/SearchResultScreen"
+import RecommendationsScreen from "./screens/RecommendationsScreen"
+import HelpScreen from "./screens/HelpScreen"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Header />
+      <main className="py-3">
+        <Container>
+          <Routes>
+            <Route path="/" element={<HomeScreen />} exact></Route>
+            <Route path="/recommendations" element={<RecommendationsScreen />} exact></Route>
+            <Route path="/about" element={<AboutScreen />} exact></Route>
+            <Route path="/signin" element={<SignInScreen />} exact></Route>
+            <Route path="/signup" element={<SignUpScreen />} exact></Route>
+            <Route
+              path="/result"
+              element={<SearchResultScreen />}
+              exact
+            ></Route>
+            <Route path="/help" element={<HelpScreen />} exact></Route>
+          </Routes>
+        </Container>
+      </main>
+      <Footer />
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
