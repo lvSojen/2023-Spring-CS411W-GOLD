@@ -9,12 +9,15 @@ import './Screens.css';
 
 function HomeScreen() {
   return (
-    <Container className="py-3">
+    <div className="homescreen-css">
+    <Container className="py-3 ">
       <h1>
         <Badge bg="light">Booked Search</Badge>
       </h1>
       <SearchBook />
     </Container>
+    </div>
+
   )
 }
 

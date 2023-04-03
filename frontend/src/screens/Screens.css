@@ -1,3 +1,12 @@
 .color-background{
     background-color: rgb(177, 93, 93);
 }
+
+.homescreen-css {
+    background-image: linear-gradient(rgba(247, 235, 235, 0.75),rgba(240, 229, 229, 0.75)),url(../../src/assets/images/white-bookcase.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #333;
+    height: 400px;
+  }

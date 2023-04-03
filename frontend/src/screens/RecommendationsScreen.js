@@ -1,6 +1,6 @@
 import React from "react"
 import { Container } from "react-bootstrap"
-import './Screens.css';
+
 import RecData from "../components/common/RecData"
 
 function RecommendationsScreen() {
