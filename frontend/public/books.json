@@ -1,0 +1,104 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "isbn": "9781234567890",
+      "title": "The Mysterious Forest",
+      "author": "Jane Doe",
+      "binding": "Paperback",
+      "price": 12.99,
+      "linkUrl": "https://bookstore.example.com/mysterious-forest",
+      "seller": "Bookstore Example"
+    },
+    {
+      "id": 2,
+      "isbn": "9780987654321",
+      "title": "Journey to the Stars",
+      "author": "John Smith",
+      "binding": "Hardcover",
+      "price": 24.99,
+      "linkUrl": "https://bookstore.example.com/journey-to-the-stars",
+      "seller": "Bookstore Example"
+    },
+    {
+      "id": 3,
+      "isbn": "9781122334455",
+      "title": "The Lost City",
+      "author": "Alice Johnson",
+      "binding": "Paperback",
+      "price": 16.99,
+      "linkUrl": "https://bookstore.example.com/the-lost-city",
+      "seller": "Bookstore Example"
+    },
+    {
+      "id": 4,
+      "isbn": "9785566778899",
+      "title": "A Tale of Two Kitties",
+      "author": "Bob Brown",
+      "binding": "Hardcover",
+      "price": 19.99,
+      "linkUrl": "https://bookstore.example.com/tale-of-two-kitties",
+      "seller": "Bookstore Example"
+    },
+    {
+      "id": 5,
+      "isbn": "9782233445566",
+      "title": "Adventures in Quantum Land",
+      "author": "Sarah Adams",
+      "binding": "Paperback",
+      "price": 14.99,
+      "linkUrl": "https://bookstore.example.com/adventures-in-quantum-land",
+      "seller": "Bookstore Example"
+    },
+    {
+      "id": 6,
+      "isbn": "9783344556677",
+      "title": "The Secrets of Time",
+      "author": "Martin White",
+      "binding": "Hardcover",
+      "price": 22.99,
+      "linkUrl": "https://bookstore.example.com/the-secrets-of-time",
+      "seller": "Bookstore Example"
+    },
+    {
+      "id": 7,
+      "isbn": "9784455667788",
+      "title": "Through the Enchanted Door",
+      "author": "Emily Clark",
+      "binding": "Paperback",
+      "price": 11.99,
+      "linkUrl": "https://bookstore.example.com/through-the-enchanted-door",
+      "seller": "Bookstore Example"
+    },
+    {
+      "id": 8,
+      "isbn": "9785566778890",
+      "title": "Gardening for the Soul",
+      "author": "Laura Thompson",
+      "binding": "Paperback",
+      "price": 18.99,
+      "linkUrl": "https://bookstore.example.com/gardening-for-the-soul",
+      "seller": "Bookstore Example"
+    },
+    {
+      "id": 9,
+      "isbn": "9786677889900",
+      "title": "A Symphony of Whales",
+      "author": "James Williams",
+      "binding": "Hardcover",
+      "price": 26.99,
+      "linkUrl": "https://bookstore.example.com/a-symphony-of-whales",
+      "seller": "Bookstore Example"
+    },
+    {
+      "id": 10,
+      "isbn": "9787788990011",
+      "title": "Coding for the Future",
+      "author": "Karen Moore",
+      "binding": "Paperback",
+      "price": 29.99,
+      "linkUrl": "https://bookstore.example.com/coding-for-the-future",
+      "seller": "Bookstore Example"
+    }
+  ]
+}
