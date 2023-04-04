@@ -13,25 +13,31 @@ import HelpScreen from "./screens/HelpScreen"
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <main className="py-3">
-        <Container>
-          <Routes>
-            <Route path="/" element={<HomeScreen />} exact></Route>
-            <Route path="/recommendations" element={<RecommendationsScreen />} exact></Route>
-            <Route path="/about" element={<AboutScreen />} exact></Route>
-            <Route path="/signin" element={<SignInScreen />} exact></Route>
-            <Route path="/signup" element={<SignUpScreen />} exact></Route>
-            <Route
-              path="/result"
-              element={<SearchResultScreen />}
-              exact
-            ></Route>
-            <Route path="/help" element={<HelpScreen />} exact></Route>
-          </Routes>
-        </Container>
-      </main>
-      <Footer />
+      <div className="app-wrapper">
+        <Header />
+        <main className="py-3 main-content">
+          <Container>
+            <Routes>
+              <Route path="/" element={<HomeScreen />} exact></Route>
+              <Route
+                path="/recommendations"
+                element={<RecommendationsScreen />}
+                exact
+              ></Route>
+              <Route path="/about" element={<AboutScreen />} exact></Route>
+              <Route path="/signin" element={<SignInScreen />} exact></Route>
+              <Route path="/signup" element={<SignUpScreen />} exact></Route>
+              <Route
+                path="/result"
+                element={<SearchResultScreen />}
+                exact
+              ></Route>
+              <Route path="/help" element={<HelpScreen />} exact></Route>
+            </Routes>
+          </Container>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   )
 }
