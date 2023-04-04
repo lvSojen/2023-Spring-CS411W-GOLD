@@ -10,6 +10,7 @@ import "./HomeScreen.css"
 function HomeScreen() {
   return (
     <div className="homescreen-css">
+      <h2>Welcome to the Booked Website</h2>
       <Container className="py-3 ">
         <h1>
           <Badge bg="light">Booked Search</Badge>

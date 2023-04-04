@@ -5,7 +5,7 @@
 .home-header {
   background-image: linear-gradient(
       rgba(247, 235, 235, 0.75),
-      rgba(240, 229, 229, 0.75)
+      rgba(255, 255, 255, 0.75)
     ),
     url(../../src/assets/images/white-bookcase.jpg);
   background-size: cover;
@@ -13,4 +13,11 @@
   background-repeat: no-repeat;
   background-color: #333;
   height: 400px;
+}
+
+
+.homescreen-css h2 {
+  color: #1f1919;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
 }
