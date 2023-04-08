@@ -22,3 +22,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.home-header .text-container h1 {
+  color: rgb(0, 0, 0);
+  font-size: 3.6rem;
+}
