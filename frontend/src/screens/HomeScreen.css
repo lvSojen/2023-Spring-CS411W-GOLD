@@ -3,9 +3,10 @@
 }
 
 .home-header {
+  position: relative;
   background-image: linear-gradient(
       rgba(247, 235, 235, 0.75),
-      rgba(240, 229, 229, 0.75)
+      rgba(255, 255, 255, 0.75)
     ),
     url(../../src/assets/images/white-bookcase.jpg);
   background-size: cover;
@@ -13,4 +14,29 @@
   background-repeat: no-repeat;
   background-color: #333;
   height: 400px;
+  opacity: 0;
+  animation: fade-in 1s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1.5;
+  }
+}
+
+.home-header .text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fade-in 1s 0.5s forwards;
+}
+
+.home-header .text-container h1 {
+  color: rgb(0, 0, 0);
+  font-size: 3.6rem;
 }

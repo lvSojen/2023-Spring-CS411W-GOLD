@@ -10,6 +10,9 @@ function Header() {
 
   return (
     <header className={`pb-5 ${headerClassName}`}>
+    <div className="text-container">
+      <h1>Welcome To The Booked Website</h1>
+    </div>
       <Navbar bg="light" expand="lg" fixed="top">
         <Container>
           <Navbar.Brand href="/">
@@ -45,3 +48,4 @@ function Header() {
 }
 
 export default Header
+
