@@ -19,7 +19,7 @@ function Header() {
             duration={0}
             style={{ display: "flex", justifyContent: "center" }}
           >
-            <Button variant="success" className="" style={{ margin: "0 auto" }}>
+            <Button variant="primary" className="" style={{ margin: "0 auto" }}>
               Find Your Next Read
             </Button>
           </Link>
