@@ -1,7 +1,7 @@
-import React, {useState} from "react"
+import React, { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { Card, Container } from "react-bootstrap"
-import axios from 'axios';
+import axios from "axios"
 import ResultTable from "./ResultTable"
 
 const SearchResults = () => {
@@ -69,28 +69,59 @@ const SearchResults = () => {
   }
 
   // Configure parameters to avoid sending '[not specified]' string in request
-  //Params with '[not specified]' as value will be set as empty strings
+  // Params with '[not specified]' as value will be set as empty strings
   const configureParams = (parameterValue) => {
     if (parameterValue === "[not specified]") {
       return ""
-    }
-    else {
+    } else {
       return parameterValue
     }
   }
 
-  //Send request to database with relevant parameters
-  //NOTE: The REST API currently does not support Edition and Language parameters
-  const [books,setBooks]=useState([])
-  const getBooks = (bookTitle, author, isbn, condition, binding, priceMin, priceMax) => {
-    axios.get("http://127.0.0.1:8000/books/", {
-      params: { title : configureParams(bookTitle), isbn: configureParams(isbn), author: configureParams(author), condition: configureParams(condition), binding: configureParams(binding), price_max: configureParams(priceMax), price_min: configureParams(priceMin)}
-    })
-    .then((response)=> {
-      setBooks(response.data)
-      console.log(response.data)
-    })
+  // Send request to database with relevant parameters
+  // NOTE: The REST API currently does not support Edition and Language parameters
+  const [books, setBooks] = useState([])
+  const getBooks = (
+    bookTitle,
+    author,
+    isbn,
+    condition,
+    binding,
+    priceMin,
+    priceMax
+  ) => {
+    axios
+      .get("http://127.0.0.1:8000/books/", {
+        params: {
+          title: configureParams(bookTitle),
+          isbn: configureParams(isbn),
+          author: configureParams(author),
+          condition: configureParams(condition),
+          binding: configureParams(binding),
+          price_max: configureParams(priceMax),
+          price_min: configureParams(priceMin),
+        },
+      })
+      .then((response) => {
+        setBooks(response.data)
+        console.log(response.data)
+      })
   }
+
+  // Use useEffect to fetch data when the component mounts
+  useEffect(() => {
+    getBooks(
+      bookTitle,
+      author,
+      isbn,
+      formatCondition(condition),
+      formatBinding(binding),
+      priceMin,
+      priceMax
+    )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bookTitle, author, isbn, condition, binding, priceMin, priceMax])
+
   return (
     <Container className="text-center">
       <h1>Search Results</h1>
@@ -110,17 +141,15 @@ const SearchResults = () => {
             <p>Format: {formatFormat(format)}</p>
             <p>Price Minimum: {priceMin}</p>
             <p>Price Maximum: {priceMax}</p>
-            <p>{getBooks(bookTitle, author, isbn, formatCondition(condition), formatBinding(binding), priceMin, priceMax)}</p>
           </Card.Text>
         </Card.Body>
       </Card>
 
-    <Container className="mt-5">
-      <p>{books.length} results found</p>
-      {books.length > 0 && <ResultTable data={books} />}
+      <Container className="mt-5">
+        <p>{books.length} results found</p>
+        {books.length > 0 && <ResultTable data={books} />}
+      </Container>
     </Container>
-  </Container>
   )
 }
-
 export default SearchResults

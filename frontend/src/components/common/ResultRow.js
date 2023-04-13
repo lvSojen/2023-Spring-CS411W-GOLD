@@ -2,10 +2,10 @@ import React from "react"
 import { Button } from "react-bootstrap"
 
 function ResultRow(props) {
-  // console.log("props.id :" + props.id)
+  // console.log("props.id :" + )
   return (
     <tr>
-      <th scope="row">{props.id}</th>
+      <th scope="row">{props.index}</th>
       <td> {props.seller}</td>
       <td style={{ textAlign: "left" }}>
         <strong>Title:</strong> {props.title}
