@@ -69,7 +69,7 @@ const SearchResults = () => {
   // Configure parameters to avoid sending '[not specified]' string in request
   //Params with '[not specified]' as value will be set as empty strings
   const configureParams = (parameterValue) => {
-    if (parameterValue == "[not specified]") {
+    if (parameterValue === "[not specified]") {
       return ""
     }
     else {
