@@ -1,7 +1,8 @@
-import React from "react"
+import React, {useState} from "react"
 import { useLocation } from "react-router-dom"
 import { Card, Container } from "react-bootstrap"
 import axios from 'axios';
+import ResultTable from "./ResultTable"
 
 const SearchResults = () => {
   const { state } = useLocation()
@@ -66,25 +67,27 @@ const SearchResults = () => {
         return "[not specified]"
     }
   }
+
   // Configure parameters to avoid sending '[not specified]' string in request
   //Params with '[not specified]' as value will be set as empty strings
   const configureParams = (parameterValue) => {
-    if (parameterValue == "[not specified]") {
+    if (parameterValue === "[not specified]") {
       return ""
     }
     else {
       return parameterValue
     }
-   
   }
+
   //Send request to database with relevant parameters
   //NOTE: The REST API currently does not support Edition and Language parameters
+  const [books,setBooks]=useState([])
   const getBooks = (bookTitle, author, isbn, condition, binding, priceMin, priceMax) => {
     axios.get("http://127.0.0.1:8000/books/", {
       params: { title : configureParams(bookTitle), isbn: configureParams(isbn), author: configureParams(author), condition: configureParams(condition), binding: configureParams(binding), price_max: configureParams(priceMax), price_min: configureParams(priceMin)}
     })
     .then((response)=> {
-      //Decide here what to do with the data.
+      setBooks(response.data)
       console.log(response.data)
     })
   }
@@ -107,11 +110,16 @@ const SearchResults = () => {
             <p>Format: {formatFormat(format)}</p>
             <p>Price Minimum: {priceMin}</p>
             <p>Price Maximum: {priceMax}</p>
-            <p>Got data {getBooks(bookTitle, author, isbn, formatCondition(condition), formatBinding(binding), priceMin, priceMax)}</p>
+            <p>{getBooks(bookTitle, author, isbn, formatCondition(condition), formatBinding(binding), priceMin, priceMax)}</p>
           </Card.Text>
         </Card.Body>
       </Card>
+
+    <Container className="mt-5">
+      <p>{books.length} results found</p>
+      {books.length > 0 && <ResultTable data={books} />}
     </Container>
+  </Container>
   )
 }
 

@@ -2,7 +2,7 @@ import React from "react"
 import { Button } from "react-bootstrap"
 
 function ResultRow(props) {
-  console.log("props.id :" + props.id)
+  // console.log("props.id :" + props.id)
   return (
     <tr>
       <th scope="row">{props.id}</th>
@@ -15,6 +15,8 @@ function ResultRow(props) {
         <strong>ISBN:</strong> {props.isbn}
         <br />
         <strong>Binding:</strong> {props.binding}
+        <br />
+        <strong>Condition:</strong> {props.condition}
         <br />
         <strong>Price:</strong> ${props.price}
         <br />

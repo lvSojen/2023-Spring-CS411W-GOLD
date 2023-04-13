@@ -18,16 +18,18 @@ function ResultTable(props) {
       </thead>
       <tbody>
         {props.data.map((book) => (
+
           <ResultRow
-            key={book.id}
-            id={book.id}
+            // key={book.isbn}
+            id={0}
             title={book.title}
             author={book.author}
             isbn={book.isbn}
             binding={book.binding}
-            price={book.price}
-            linkUrl={book.linkUrl}
-            seller={book.seller}
+            condition={book.availability[0].condition}
+            price={book.availability[0].price}
+            linkUrl={book.availability[0].link_url}
+            seller={book.availability[0].book_store}
           />
         ))}
       </tbody>
