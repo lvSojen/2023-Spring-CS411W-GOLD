@@ -1,7 +1,7 @@
 import React from "react"
 import Table from "react-bootstrap/Table"
 import ResultRow from "./ResultRow"
-import "./ResultRow.css"
+import "../style/ResultRow.css"
 function ResultTable(props) {
   console.log(props)
   return (

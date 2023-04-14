@@ -1,12 +1,27 @@
 import React from "react"
 import { Button } from "react-bootstrap"
-
+import HoverText from "./HoverText"
 function ResultRow(props) {
   // console.log("props.id :" + )
   return (
     <tr>
       <th scope="row">{props.index}</th>
-      <td> {props.seller}</td>
+      <td>
+        {props.seller}
+        {props.seller === "Second and Charles" ? (
+          <img
+            height={"60px"}
+            src={require("../../assets/images/charles_logo.png")}
+            alt="Second and Charles Logo"
+          />
+        ) : (
+          <img
+            height={"60px"}
+            src={require("../../assets/images/prince_logo.jpg")}
+            alt="Default Logo"
+          />
+        )}
+      </td>
       <td style={{ textAlign: "left" }}>
         <strong>Title:</strong> {props.title}
         <br />
@@ -17,17 +32,29 @@ function ResultRow(props) {
         <strong>Binding:</strong> {props.binding}
         <br />
         <strong>Condition:</strong> {props.condition}
-        <br />
-        <strong>Price:</strong> ${props.price}
-        <br />
-        <a href={props.linkUrl} target="_blank" rel="noopener noreferrer">
+        {/* <a href={props.linkUrl} target="_blank" rel="noopener noreferrer">
           More Info
-        </a>
+        </a> */}
       </td>
       <td>10 miles</td>
       <td>4.99</td>
       <td>
-        <strong>$ {(props.price + 4.99).toFixed(2)}</strong>{" "}
+        <a href={props.linkUrl} target="_blank" rel="noopener noreferrer">
+          <HoverText
+            messageElement={
+              <>
+                Buy this book from <span>{props.seller}</span>
+                <hr />
+                Base Price: ${props.price}
+                <br />
+                + Estimated Shipping: $4.99
+                <br />= Total Cost: ${(props.price + 4.99).toFixed(2)}
+              </>
+            }
+          >
+            <strong> $ {(props.price + 4.99).toFixed(2)} </strong>
+          </HoverText>
+        </a>
       </td>
       <td>
         <Button variant="outline-primary">
