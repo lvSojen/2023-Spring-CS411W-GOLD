@@ -3,3 +3,13 @@ td {
   text-align: center;
   vertical-align: middle;
 }
+.variation-buttons {
+  text-align: right;
+  display: flex;
+  gap: 4px;
+}
+.book-info-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

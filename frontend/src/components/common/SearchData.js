@@ -146,7 +146,7 @@ const SearchResults = () => {
       </Card>
 
       <Container className="mt-5">
-        <p>{books.length} results found</p>
+        <p style={{ textAlign: "left" }}>{books.length} results found</p>
         {books.length > 0 && <ResultTable data={books} />}
       </Container>
     </Container>

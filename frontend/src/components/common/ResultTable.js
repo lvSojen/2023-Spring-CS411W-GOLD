@@ -6,6 +6,7 @@ import "../style/ResultRow.css"
 function ResultTable(props) {
   console.log(props)
   const [activePage, setActivePage] = useState(1)
+  const [selectedVariants, setSelectedVariants] = useState({})
   const itemsPerPage = 10
 
   const handlePageChange = (pageNumber) => {
@@ -15,6 +16,9 @@ function ResultTable(props) {
     (activePage - 1) * itemsPerPage,
     activePage * itemsPerPage
   )
+  const handleVariantChange = (isbn, variantIndex) => {
+    setSelectedVariants({ ...selectedVariants, [isbn]: variantIndex })
+  }
   return (
     <>
       <Table striped bordered hover>
@@ -38,10 +42,18 @@ function ResultTable(props) {
               author={book.author}
               isbn={book.isbn}
               binding={book.binding}
-              condition={book.availability[0].condition}
-              price={book.availability[0].price}
-              linkUrl={book.availability[0].link_url}
-              seller={book.availability[0].book_store}
+              condition={
+                book.availability[selectedVariants[book.isbn] || 0].condition
+              }
+              price={book.availability[selectedVariants[book.isbn] || 0].price}
+              linkUrl={
+                book.availability[selectedVariants[book.isbn] || 0].link_url
+              }
+              seller={
+                book.availability[selectedVariants[book.isbn] || 0].book_store
+              }
+              handleVariantChange={handleVariantChange}
+              data={book}
             />
           ))}
         </tbody>
