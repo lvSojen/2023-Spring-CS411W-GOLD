@@ -27,9 +27,11 @@ const formatOptions = [
   { label: "Physical", value: 1 },
   { label: "Digital", value: 2 },
 ]
+
 const SearchBook = React.memo(() => {
   const [formData, setFormData] = useState({})
   const navigate = useNavigate()
+  const [resetKey, setResetKey] = useState(0)
   const handleSubmit = (e) => {
     e.preventDefault()
     navigate("/result", { state: formData })
@@ -48,6 +50,16 @@ const SearchBook = React.memo(() => {
   }
   const handleFormatChange = (selectedOption) => {
     setFormData({ ...formData, format: selectedOption?.value })
+  }
+
+  const handleReset = () => {
+    setFormData({})
+    setResetKey((prevKey) => prevKey + 1) // Add this line
+    document.getElementById("bookTitle").value = ""
+    document.getElementById("Author").value = ""
+    document.getElementById("ISBN").value = ""
+    document.getElementById("PriceMinimum").value = ""
+    document.getElementById("PriceMaximum").value = ""
   }
   return (
     <Container className="py-3">
@@ -75,6 +87,7 @@ const SearchBook = React.memo(() => {
         <Form.Group className="mb-3" controlId="Language">
           <Form.Label>Language</Form.Label>
           <Select
+            key={`language-${resetKey}`}
             isClearable
             options={languageOptions}
             onChange={handleLanguageChange}
@@ -94,6 +107,7 @@ const SearchBook = React.memo(() => {
               <Form.Group className="mb-3" controlId="Condition">
                 <Form.Label>Condition</Form.Label>
                 <Select
+                  key={`condition-${resetKey}`}
                   isClearable
                   options={conditionOptions}
                   onChange={handleConditionChange}
@@ -104,6 +118,7 @@ const SearchBook = React.memo(() => {
               <Form.Group className="mb-3" controlId="Edition">
                 <Form.Label>Edition</Form.Label>
                 <Select
+                  key={`edition-${resetKey}`}
                   isClearable
                   options={editionOptions}
                   onChange={handleEditionChange}
@@ -114,6 +129,7 @@ const SearchBook = React.memo(() => {
               <Form.Group className="mb-3" controlId="Binding">
                 <Form.Label>Binding</Form.Label>
                 <Select
+                  key={`binding-${resetKey}`}
                   isClearable
                   options={bindingOptions}
                   onChange={handleBindingChange}
@@ -124,6 +140,7 @@ const SearchBook = React.memo(() => {
               <Form.Group className="mb-3" controlId="Format">
                 <Form.Label>Format</Form.Label>
                 <Select
+                  key={`format-${resetKey}`}
                   isClearable
                   options={formatOptions}
                   onChange={handleFormatChange}
@@ -156,6 +173,13 @@ const SearchBook = React.memo(() => {
         </Form.Group>
         <Button variant="primary" type="submit">
           Search
+        </Button>
+        <Button
+          variant="secondary"
+          style={{ marginLeft: "10px" }}
+          onClick={handleReset}
+        >
+          Reset
         </Button>
       </Form>
     </Container>
