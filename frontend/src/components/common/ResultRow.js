@@ -7,7 +7,7 @@ function ResultRow(props) {
     <tr>
       <th scope="row">{props.index}</th>
       <td>
-        {props.seller}
+        {props.seller}<br />
         {props.seller === "Second and Charles" ? (
           <img
             height={"60px"}
