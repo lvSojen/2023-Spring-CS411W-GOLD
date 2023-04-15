@@ -1,0 +1,17 @@
+.hoverText {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .hoverText-message {
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    pointer-events: none;
+  }
+  
