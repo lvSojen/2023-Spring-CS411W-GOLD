@@ -11,9 +11,9 @@ function HomeScreen() {
   return (
     <div className="homescreen-css">
       <Container className="py-3">
-        <h1 id="search">
-          <Badge bg="light">Booked Search</Badge>
-        </h1>
+        <h2 id="search">
+          <b>Booked Search</b>
+        </h2>
         <SearchBook />
       </Container>
     </div>

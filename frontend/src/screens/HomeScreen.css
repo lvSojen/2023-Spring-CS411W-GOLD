@@ -27,6 +27,14 @@
   }
 }
 
+h1{
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+}
+
 .home-header .text-container {
   position: absolute;
   top: 50%;
