@@ -10,6 +10,7 @@ import SignUpScreen from "./screens/SignUpScreen"
 import SearchResultScreen from "./screens/SearchResultScreen"
 import RecommendationsScreen from "./screens/RecommendationsScreen"
 import HelpScreen from "./screens/HelpScreen"
+import FAQScreen from "./screens/FAQScreen"
 function App() {
   return (
     <BrowserRouter>
@@ -33,6 +34,7 @@ function App() {
                 exact
               ></Route>
               <Route path="/help" element={<HelpScreen />} exact></Route>
+              <Route path="/FAQ" element={<FAQScreen/>} exact></Route>
             </Routes>
           </Container>
         </main>
