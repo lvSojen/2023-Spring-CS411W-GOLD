@@ -47,6 +47,14 @@ const SearchBook = React.memo(() => {
   const [resetKey, setResetKey] = useState(0)
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (
+      !formData.bookTitle?.trim() &&
+      !formData.author?.trim() &&
+      !formData.isbn?.trim()
+    ) {
+      alert("Please fill at least one of the following: Title, ISBN or Author")
+      return
+    }
     navigate("/result", { state: formData })
   }
   const handleLanguageChange = (selectedOption) => {
