@@ -5,6 +5,19 @@ import Form from "react-bootstrap/Form"
 import { useNavigate } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Select from "react-select"
+function Center({children}) {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 const languageOptions = [
   { label: "English", value: "English" },
   { label: "Spanish", value: "Spanish" },
@@ -63,6 +76,7 @@ const SearchBook = React.memo(() => {
   }
   return (
     <Container className="py-3">
+      <Center>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="bookTitle">
           <Form.Label>Book Title</Form.Label>
@@ -103,7 +117,7 @@ const SearchBook = React.memo(() => {
         </Form.Group>
         <div className="container">
           <div className="row">
-            <div className="col-md-2">
+            <div className="col-md-6">
               <Form.Group className="mb-3" controlId="Condition">
                 <Form.Label>Condition</Form.Label>
                 <Select
@@ -114,7 +128,7 @@ const SearchBook = React.memo(() => {
                 />
               </Form.Group>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-6">
               <Form.Group className="mb-3" controlId="Edition">
                 <Form.Label>Edition</Form.Label>
                 <Select
@@ -125,7 +139,7 @@ const SearchBook = React.memo(() => {
                 />
               </Form.Group>
             </div>
-            <div className="col-md-2">
+            <div className="col-md-6">
               <Form.Group className="mb-3" controlId="Binding">
                 <Form.Label>Binding</Form.Label>
                 <Select
@@ -136,7 +150,7 @@ const SearchBook = React.memo(() => {
                 />
               </Form.Group>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-6">
               <Form.Group className="mb-3" controlId="Format">
                 <Form.Label>Format</Form.Label>
                 <Select
@@ -182,6 +196,7 @@ const SearchBook = React.memo(() => {
           Reset
         </Button>
       </Form>
+      </Center>
     </Container>
   )
 })
