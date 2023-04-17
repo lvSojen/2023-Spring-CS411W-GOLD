@@ -4,7 +4,7 @@ import React from "react"
 import { Container } from "react-bootstrap"
 //import SearchForm from "../components/common/SearchForm"
 import SearchBook from "../components/common/SearchBook"
-import Badge from "react-bootstrap/Badge"
+// import Badge from "react-bootstrap/Badge"
 import "./HomeScreen.css"
 
 function HomeScreen() {
