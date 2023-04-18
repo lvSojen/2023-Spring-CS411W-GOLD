@@ -70,23 +70,19 @@ const SearchResults = () => {
 
   // Configure parameters to avoid sending '[not specified]' string in request
   // Params with '[not specified]' as value will be set as empty strings
-  const configureParams = (parameterValue, isISBN = false) => {
+  const configureParams = (parameterValue, isPrice = false) => {
     if (parameterValue === "[not specified]") {
       return ""
     } else {
-      if (isISBN) {
-        return parameterValue;
+      const parsedValue = parseFloat(parameterValue)
+      if (!isNaN(parsedValue) && isPrice) {
+        return (parsedValue - 4.99).toString()
       } else {
-        const parsedValue = parseFloat(parameterValue)
-        if (!isNaN(parsedValue)) {
-          return (parsedValue - 4.99).toString()
-        } else {
-          return parameterValue
-        }
+        return parameterValue
       }
     }
   }
-  
+
   // const configureParams = (parameterValue) => {
   //   if (parameterValue === "[not specified]") {
   //     return ""
@@ -110,12 +106,12 @@ const SearchResults = () => {
       .get("http://127.0.0.1:8000/books/", {
         params: {
           title: configureParams(bookTitle),
-          isbn: configureParams(isbn, true),
+          isbn: configureParams(isbn),
           author: configureParams(author),
           condition: configureParams(condition),
           binding: configureParams(binding),
-          price_max: configureParams(priceMax),
-          price_min: configureParams(priceMin),
+          price_max: configureParams(priceMax, true),
+          price_min: configureParams(priceMin, true),
         },
       })
       .then((response) => {
