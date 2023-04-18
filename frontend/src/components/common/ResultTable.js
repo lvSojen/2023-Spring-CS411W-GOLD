@@ -3,22 +3,32 @@ import Table from "react-bootstrap/Table"
 import ResultRow from "./ResultRow"
 import Pagination from "react-js-pagination"
 import "../style/ResultRow.css"
+
 function ResultTable(props) {
-  console.log(props)
   const [activePage, setActivePage] = useState(1)
   const [selectedVariants, setSelectedVariants] = useState({})
   const itemsPerPage = 10
 
+  // Remove duplicates from the data array
+  const uniqueData = Array.from(new Set(props.data.map((book) => book.isbn)))
+    .map((isbn) => {
+      return props.data.find((book) => book.isbn === isbn)
+    })
+    .filter((book) => book !== undefined)
+
   const handlePageChange = (pageNumber) => {
     setActivePage(pageNumber)
   }
-  const displayedData = props.data.slice(
+
+  const displayedData = uniqueData.slice(
     (activePage - 1) * itemsPerPage,
     activePage * itemsPerPage
   )
+
   const handleVariantChange = (isbn, variantIndex) => {
     setSelectedVariants({ ...selectedVariants, [isbn]: variantIndex })
   }
+
   return (
     <>
       <Table striped bordered hover>
@@ -61,7 +71,7 @@ function ResultTable(props) {
       <Pagination
         activePage={activePage}
         itemsCountPerPage={itemsPerPage}
-        totalItemsCount={props.data.length}
+        totalItemsCount={uniqueData.length}
         pageRangeDisplayed={5}
         onChange={handlePageChange}
         itemClass="page-item"

@@ -179,8 +179,14 @@ const SearchBook = React.memo(() => {
               <br></br>Price Minimum
             </Form.Label>
             <Form.Control
+<<<<<<< HEAD
               type="number"
               placeholder="Min"
+=======
+              type="text"
+              placeholder="Min"
+              pattern="[0-9]*\.?[0-9]+"
+>>>>>>> dev
               onChange={(e) =>
                 setFormData({ ...formData, priceMin: e.target.value })
               }
@@ -189,8 +195,14 @@ const SearchBook = React.memo(() => {
           <Form.Group className="mb-3" controlId="PriceMaximum">
             <Form.Label>Price Maximum</Form.Label>
             <Form.Control
+<<<<<<< HEAD
               type="number"
               placeholder="Max"
+=======
+              type="text"
+              placeholder="Max"
+              pattern="[0-9]*\.?[0-9]+"
+>>>>>>> dev
               onChange={(e) =>
                 setFormData({ ...formData, priceMax: e.target.value })
               }
