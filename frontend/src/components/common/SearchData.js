@@ -70,12 +70,12 @@ const SearchResults = () => {
 
   // Configure parameters to avoid sending '[not specified]' string in request
   // Params with '[not specified]' as value will be set as empty strings
-  const configureParams = (parameterValue) => {
+  const configureParams = (parameterValue, isPrice = false) => {
     if (parameterValue === "[not specified]") {
       return ""
     } else {
       const parsedValue = parseFloat(parameterValue)
-      if (!isNaN(parsedValue)) {
+      if (!isNaN(parsedValue) && isPrice) {
         return (parsedValue - 4.99).toString()
       } else {
         return parameterValue
@@ -83,6 +83,13 @@ const SearchResults = () => {
     }
   }
 
+  // const configureParams = (parameterValue) => {
+  //   if (parameterValue === "[not specified]") {
+  //     return ""
+  //   } else {
+  //     return parameterValue
+  //   }
+  // }
   // Send request to database with relevant parameters
   // NOTE: The REST API currently does not support Edition and Language parameters
   const [books, setBooks] = useState([])
@@ -103,8 +110,8 @@ const SearchResults = () => {
           author: configureParams(author),
           condition: configureParams(condition),
           binding: configureParams(binding),
-          price_max: configureParams(priceMax),
-          price_min: configureParams(priceMin),
+          price_max: configureParams(priceMax, true),
+          price_min: configureParams(priceMin, true),
         },
       })
       .then((response) => {

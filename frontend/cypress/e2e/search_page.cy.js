@@ -21,7 +21,7 @@ describe("Home page Integration testing", () => {
   })
   it("Able to find a sepsfic book based on the ISBN", () => {
     cy.visit("http://localhost:3000/")
-    cy.get("#ISBN").type("9780743273565")
+    cy.get('input[name="ISBN"]').wait(1000).type("9780743273565", {force: true})
     cy.get("button[type='submit']").click()
     cy.contains("p", "ISBN: ").should("be.visible")
     cy.contains("p", "9780743273565").should("be.visible")
@@ -41,7 +41,7 @@ describe("Home page Integration testing", () => {
   })
   it("Change varitatin ", () => {
     cy.visit("http://localhost:3000/")
-    cy.get("#ISBN").type("9780743273565")
+    cy.get("#ISBN").type("9780743273565", {force: true})
     cy.get("button[type='submit']").click()
     // Wait for the results page to load and find the variant selection dropdown
     cy.contains("button", "3").click()
@@ -60,7 +60,7 @@ describe("Home page Integration testing", () => {
   })
   it("Able to go to seller's website ", () => {
     cy.visit("http://localhost:3000/")
-    cy.get("#ISBN").type("9780743273565")
+    cy.get("#ISBN").type("9780743273565", {force: true})
     cy.get("button[type='submit']").click()
     // Wait for the results page to load and find the variant selection dropdown
     cy.contains("button", "3").click()

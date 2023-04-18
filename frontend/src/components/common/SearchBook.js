@@ -120,6 +120,7 @@ const SearchBook = React.memo(() => {
             <Form.Control
               type="text"
               placeholder="ISBN"
+              name="ISBN"
               onChange={(e) =>
                 setFormData({ ...formData, isbn: e.target.value })
               }
