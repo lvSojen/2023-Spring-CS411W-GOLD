@@ -39,6 +39,9 @@ function Header() {
               <Nav.Link href="/recommendations">
                 <i class="fa fa-thumbs-up"></i> Recommendations
               </Nav.Link>
+              <Nav.Link href="/favorites">
+                <i class="fa-solid fa-star"></i> Favorites
+              </Nav.Link>
               <Nav.Link href="/signin">
                 <i class="fa-solid fa-right-to-bracket"></i> Sign In
               </Nav.Link>
@@ -53,9 +56,6 @@ function Header() {
               </Nav.Link>
               <Nav.Link href="/FAQ">
                 <i class="fa-solid fa-question"></i> FAQ
-              </Nav.Link>
-              <Nav.Link href="/favorites">
-                <i class="fa-solid fa-star"></i> Favorites
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
