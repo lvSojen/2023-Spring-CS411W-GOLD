@@ -81,6 +81,7 @@ const SearchBook = React.memo(() => {
     document.getElementById("ISBN").value = ""
     document.getElementById("PriceMinimum").value = ""
     document.getElementById("PriceMaximum").value = ""
+    document.getElementById("ZipCode").value = ""
   }
   return (
     <Container className="py-3">
@@ -197,6 +198,17 @@ const SearchBook = React.memo(() => {
                 setFormData({ ...formData, priceMax: e.target.value })
               }
             />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="ZipCode">
+            <Form.Label>Zip Code</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder=""
+                name="ZipCode"
+                onChange={(e) =>
+                  setFormData({ ...formData, zipcode: e.target.value })
+                }
+              />
           </Form.Group>
           <Button variant="primary" type="submit">
             Search

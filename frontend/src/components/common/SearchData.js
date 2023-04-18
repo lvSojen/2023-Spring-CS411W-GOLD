@@ -19,6 +19,7 @@ const SearchResults = () => {
     format = "[not specified]",
     priceMin = "[not specified]",
     priceMax = "[not specified]",
+    zipcode = "[not specified]",
   } = state
 
   // Helper functions to format data
@@ -100,7 +101,8 @@ const SearchResults = () => {
     condition,
     binding,
     priceMin,
-    priceMax
+    priceMax,
+    zipcode
   ) => {
     axios
       .get("http://127.0.0.1:8000/books/", {
@@ -112,6 +114,7 @@ const SearchResults = () => {
           binding: configureParams(binding),
           price_max: configureParams(priceMax, true),
           price_min: configureParams(priceMin, true),
+          zipcode: configureParams(zipcode),
         },
       })
       .then((response) => {
@@ -129,10 +132,11 @@ const SearchResults = () => {
       formatCondition(condition),
       formatBinding(binding),
       priceMin,
-      priceMax
+      priceMax,
+      zipcode
     )
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookTitle, author, isbn, condition, binding, priceMin, priceMax])
+  }, [bookTitle, author, isbn, condition, binding, priceMin, priceMax, zipcode])
 
   return (
     <Container className="text-center">
@@ -153,6 +157,7 @@ const SearchResults = () => {
             <p>Format: {formatFormat(format)}</p>
             <p>Price Minimum: {priceMin}</p>
             <p>Price Maximum: {priceMax}</p>
+            <p>ZipCode: {zipcode}</p>
           </Card.Text>
         </Card.Body>
       </Card>
