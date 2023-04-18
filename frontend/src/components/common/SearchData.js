@@ -74,7 +74,12 @@ const SearchResults = () => {
     if (parameterValue === "[not specified]") {
       return ""
     } else {
-      return parameterValue
+      const parsedValue = parseFloat(parameterValue)
+      if (!isNaN(parsedValue)) {
+        return (parsedValue - 4.99).toString()
+      } else {
+        return parameterValue
+      }
     }
   }
 
