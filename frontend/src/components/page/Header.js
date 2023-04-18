@@ -54,6 +54,9 @@ function Header() {
               <Nav.Link href="/FAQ">
                 <i class="fa-solid fa-question"></i> FAQ
               </Nav.Link>
+              <Nav.Link href="/favorites">
+                <i class="fa-solid fa-star"></i> Favorites
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
