@@ -70,19 +70,30 @@ const SearchResults = () => {
 
   // Configure parameters to avoid sending '[not specified]' string in request
   // Params with '[not specified]' as value will be set as empty strings
-  const configureParams = (parameterValue) => {
+  const configureParams = (parameterValue, isISBN = false) => {
     if (parameterValue === "[not specified]") {
       return ""
     } else {
-      const parsedValue = parseFloat(parameterValue)
-      if (!isNaN(parsedValue)) {
-        return (parsedValue - 4.99).toString()
+      if (isISBN) {
+        return parameterValue;
       } else {
-        return parameterValue
+        const parsedValue = parseFloat(parameterValue)
+        if (!isNaN(parsedValue)) {
+          return (parsedValue - 4.99).toString()
+        } else {
+          return parameterValue
+        }
       }
     }
   }
-
+  
+  // const configureParams = (parameterValue) => {
+  //   if (parameterValue === "[not specified]") {
+  //     return ""
+  //   } else {
+  //     return parameterValue
+  //   }
+  // }
   // Send request to database with relevant parameters
   // NOTE: The REST API currently does not support Edition and Language parameters
   const [books, setBooks] = useState([])
@@ -99,7 +110,7 @@ const SearchResults = () => {
       .get("http://127.0.0.1:8000/books/", {
         params: {
           title: configureParams(bookTitle),
-          isbn: configureParams(isbn),
+          isbn: configureParams(isbn, true),
           author: configureParams(author),
           condition: configureParams(condition),
           binding: configureParams(binding),
