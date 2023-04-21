@@ -18,7 +18,7 @@ function SearchResult() {
 
     fetchBooks()
   }, [])
-  console.log("booksData:", booksData)
+  // console.log("booksData:", booksData)
   return (
     <Container className="mt-5">
       <p>13,000 + results</p>

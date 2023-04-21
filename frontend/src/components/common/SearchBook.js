@@ -45,6 +45,7 @@ const SearchBook = React.memo(() => {
   const [formData, setFormData] = useState({})
   const navigate = useNavigate()
   const [resetKey, setResetKey] = useState(0)
+  const [showWarning, setShowWarning] = useState(false); // Add this line
   const handleSubmit = (e) => {
     e.preventDefault()
     if (
@@ -72,7 +73,16 @@ const SearchBook = React.memo(() => {
   const handleFormatChange = (selectedOption) => {
     setFormData({ ...formData, format: selectedOption?.value })
   }
+  const handleZipCodeChange = (e) => {
+    const value = e.target.value;
+    setFormData({ ...formData, zipcode: value });
 
+    if (value.length !== 5 || !/^\d{5}$/.test(value)) {
+      setShowWarning(true);
+    } else {
+      setShowWarning(false);
+    }
+  };
   const handleReset = () => {
     setFormData({})
     setResetKey((prevKey) => prevKey + 1) // Add this line
@@ -82,6 +92,7 @@ const SearchBook = React.memo(() => {
     document.getElementById("PriceMinimum").value = ""
     document.getElementById("PriceMaximum").value = ""
     document.getElementById("ZipCode").value = ""
+    document.getElementById("Distance").value = ""
   }
   return (
     <Container className="py-3">
@@ -201,14 +212,31 @@ const SearchBook = React.memo(() => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="ZipCode">
             <Form.Label>Zip Code</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder=""
-                name="ZipCode"
-                onChange={(e) =>
-                  setFormData({ ...formData, zipcode: e.target.value })
-                }
-              />
+            <Form.Control
+              type="text"
+              placeholder=""
+              name="ZipCode"
+              maxLength="5"
+              minLength="5"
+              pattern="\d{5}"
+              onChange={handleZipCodeChange}
+            />
+            {showWarning && (
+              <div className="text-danger mt-2">
+                Please enter a valid 5-digit zip code.
+              </div>
+            )}
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="Distance">
+            <Form.Label>Maximum Distance (miles)</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder=""
+              name="Distance"
+              onChange={(e) =>
+                setFormData({ ...formData, distance: e.target.value })
+              }
+            />
           </Form.Group>
           <Button variant="primary" type="submit">
             Search

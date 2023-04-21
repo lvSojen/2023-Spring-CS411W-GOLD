@@ -9,17 +9,18 @@ const SearchResults = () => {
 
   // Destructure properties from state object with default values
   const {
-    bookTitle = "[not specified]",
-    author = "[not specified]",
-    language = "[not specified]",
-    isbn = "[not specified]",
-    condition = "[not specified]",
-    edition = "[not specified]",
-    binding = "[not specified]",
-    format = "[not specified]",
-    priceMin = "[not specified]",
-    priceMax = "[not specified]",
-    zipcode = "[not specified]",
+    bookTitle = null,
+    author = null,
+    language = null,
+    isbn = null,
+    condition = null,
+    edition = null,
+    binding = null,
+    format = null,
+    priceMin = null,
+    priceMax = null,
+    zipcode = null,
+    distance = null,
   } = state
 
   // Helper functions to format data
@@ -94,6 +95,10 @@ const SearchResults = () => {
   // Send request to database with relevant parameters
   // NOTE: The REST API currently does not support Edition and Language parameters
   const [books, setBooks] = useState([])
+  // let urls = ["http://127.0.0.1:8000/books/", "http://localhost:8000/near-me/"]
+  // let urls = ["http://127.0.0.1:8000/books/"]
+  let urls = ["http://localhost:8000/near-me/"]
+  // const requests = urls.map((url) => axios.get(url))
   const getBooks = (
     bookTitle,
     author,
@@ -102,24 +107,31 @@ const SearchResults = () => {
     binding,
     priceMin,
     priceMax,
-    zipcode
+    zipcode,
   ) => {
-    axios
-      .get("http://127.0.0.1:8000/books/", {
-        params: {
-          title: configureParams(bookTitle),
-          isbn: configureParams(isbn),
-          author: configureParams(author),
-          condition: configureParams(condition),
-          binding: configureParams(binding),
-          price_max: configureParams(priceMax, true),
-          price_min: configureParams(priceMin, true),
-          zipcode: configureParams(zipcode),
-        },
+    const params = {
+      title: configureParams(bookTitle),
+      isbn: configureParams(isbn),
+      author: configureParams(author),
+      condition: configureParams(condition),
+      binding: configureParams(binding),
+      price_max: configureParams(priceMax, true),
+      price_min: configureParams(priceMin, true),
+      zipcode: configureParams(zipcode),
+    }
+
+    const requests = urls.map((url) => axios.get(url, { params }))
+
+    Promise.all(requests)
+      .then((responses) => {
+        // Combine the data from both responses
+        const combinedData = responses.flatMap((response) => response.data)
+        setBooks(combinedData)
+        // console.log(combinedData)
       })
-      .then((response) => {
-        setBooks(response.data)
-        console.log(response.data)
+      .catch((error) => {
+        // Handle any errors that occurred during the requests
+        console.error("Error fetching data from both endpoints:", error)
       })
   }
 
@@ -133,10 +145,11 @@ const SearchResults = () => {
       formatBinding(binding),
       priceMin,
       priceMax,
-      zipcode
+      zipcode,
+      distance,
     )
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookTitle, author, isbn, condition, binding, priceMin, priceMax, zipcode])
+  }, [bookTitle, author, isbn, condition, binding, priceMin, priceMax, zipcode, distance])
 
   return (
     <Container className="text-center">
@@ -155,16 +168,17 @@ const SearchResults = () => {
             <p>Edition: {formatEdition(edition)}</p>
             <p>Binding: {formatBinding(binding)}</p>
             <p>Format: {formatFormat(format)}</p>
-            <p>Price Minimum: {priceMin}</p>
-            <p>Price Maximum: {priceMax}</p>
+            <p>Minimum Price: {priceMin}</p>
+            <p>Maximum Price: {priceMax}</p>
             <p>ZipCode: {zipcode}</p>
+            <p>Maximum Distance: {distance} miles</p>
           </Card.Text>
         </Card.Body>
       </Card>
 
       <Container className="mt-5">
         <p style={{ textAlign: "left" }}>{books.length} results found</p>
-        {books.length > 0 && <ResultTable data={books} />}
+        {books.length > 0 && <ResultTable data={books} zipcode={zipcode} distance={distance}/>}
       </Container>
     </Container>
   )

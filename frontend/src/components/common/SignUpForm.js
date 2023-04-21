@@ -52,7 +52,7 @@ function SignUpform() {
         return
       }
 
-      console.log(formData) // This will log the form data to the console
+      // console.log(formData) // This will log the form data to the console
       // Submit the data to the server using an HTTP request
       event.target.reset() // Reset the form after submitting
       setFormErrors({})
