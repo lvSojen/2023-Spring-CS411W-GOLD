@@ -12,6 +12,7 @@ import RecommendationsScreen from "./screens/RecommendationsScreen"
 import HelpScreen from "./screens/HelpScreen"
 import FAQScreen from "./screens/FAQScreen"
 import FavoritesScreen from "./screens/FavoritesScreen"
+import TestDistanceScreen from "./screens/TestDistanceScreen"
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
               <Route path="/help" element={<HelpScreen />} exact></Route>
               <Route path="/FAQ" element={<FAQScreen/>} exact></Route>
               <Route path="/favorites" element={<FavoritesScreen />} exact></Route>
+              <Route path="/test" element={<TestDistanceScreen />} exact></Route>
+
             </Routes>
           </Container>
         </main>
